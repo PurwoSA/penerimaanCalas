@@ -2,17 +2,32 @@
 include "koneksi.php";
 include "head.php";
 date_default_timezone_set("Asia/Jakarta");
+// tanggal Indonesia
+function tanggal_indo($tanggal, $cetak_hari = false)
+{
+    $hari = array(1 => 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu');
+    $bulan = array(1 => 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+    $split = explode('-', $tanggal);
+    $tgl_indo = $split[2] . ' ' . $bulan[(int)$split[1]] . ' ' . $split[0];
+
+    if ($cetak_hari) {
+        $num = date('N', strtotime($tanggal));
+        return $hari[$num] . ', ' . $tgl_indo;
+    }
+    return $tgl_indo;
+}
+
 // proses input
 if (isset($_POST['simpan'])) {
-    $t                 = time();
-    $nim               = $_POST['nim'];
-    $nama_depan        = $_POST['nama_depan'];
-    $nama_belakang     = $_POST['nama_belakang'];
-    $kode_fakultas     = null;
-    $id_prodi          = null;
-    $telephone         = $_POST['telephone'];
-    $alamat_email      = $_POST['alamat_email'];
-    $angkatan          = date("Y", $t);
+    $t = time();
+    $nim = $_POST['nim'];
+    $nama_depan = $_POST['nama_depan'];
+    $nama_belakang = $_POST['nama_belakang'];
+    $kode_fakultas = null;
+    $id_prodi = null;
+    $telephone = $_POST['telephone'];
+    $alamat_email = $_POST['alamat_email'];
+    $angkatan = date("Y", $t);
     $waktu_pendaftaran = date("Y-m-d H:i:s", $t);
     if (substr("$nim", 0, 2) == 17) {
         $gelombang = "1";
@@ -154,7 +169,7 @@ if (isset($_POST['simpan'])) {
         <div class="col-md-5">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Pendaftar Terkini (<?php echo date('D d-m-Y') ?>)</h3>
+                    <h3 class="panel-title">Pendaftar Terkini (<?php echo tanggal_indo('2016-03-20', true); ?>)</h3>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-hover">

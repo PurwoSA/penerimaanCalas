@@ -21,8 +21,8 @@ function tanggal_indo($tanggal, $cetak_hari = false)
 if (isset($_POST['simpan'])) {
     $t = time();
     $nim = $_POST['nim'];
-    $nama_depan = $_POST['nama_depan'];
-    $nama_belakang = $_POST['nama_belakang'];
+    $nama_depan = ucwords($_POST['nama_depan']);
+    $nama_belakang = ucwords($_POST['nama_belakang']);
     $kode_fakultas = null;
     $id_prodi = null;
     $telephone = $_POST['telephone'];
@@ -184,7 +184,7 @@ if (isset($_POST['simpan'])) {
                         <?php
                         //ambil data
                         $sekarang_gan = date('Y-m-d');
-                        $sql = "SELECT calas.nim, calas.nama_depan, calas.nama_belakang, program_studi.program_studi FROM calas, program_studi WHERE calas.id_prodi=program_studi.id_prodi ORDER BY waktu_pendaftaran DESC LIMIT 11";
+                        $sql = "SELECT calas.nim, calas.nama_depan, calas.nama_belakang, program_studi.program_studi FROM calas, program_studi WHERE calas.id_prodi=program_studi.id_prodi ORDER BY waktu_pendaftaran DESC LIMIT 8";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {

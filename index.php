@@ -145,8 +145,8 @@ if (isset($_POST['simpan'])) {
                         </div>
                     </div>
                     <div class="panel-footer text-right" style="background-color:#fffeff;">
-                        <button class="btn btn-default" type="reset" name="reset">Bersihkan</button>
-                        <button class="btn btn-primary" type="submit" name="simpan" onclick="loadDoc">Simpan</button>
+                        <input class="btn btn-default" type="reset" name="reset">
+                        <input class="btn btn-primary" type="submit" name="simpan" onclick="loadDoc">
                     </div>
                 </div>
             </form>

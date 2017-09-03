@@ -8,6 +8,8 @@ if (isset($_POST['simpan'])) {
     $nim               = $_POST['nim'];
     $nama_depan        = $_POST['nama_depan'];
     $nama_belakang     = $_POST['nama_belakang'];
+    $kode_fakultas     = null;
+    $id_prodi          = null;
     $telephone         = $_POST['telephone'];
     $alamat_email      = $_POST['alamat_email'];
     $angkatan          = date("Y", $t);
@@ -17,35 +19,36 @@ if (isset($_POST['simpan'])) {
     } else {
         $gelombang = "3";
     }
+//    Pilih jurusan
     $jurusan = substr($nim, 2, 2);
-    if ($jurusan = 13) {
+    if ($jurusan == 13) {
         $kode_fakultas = "FTI";
         $id_prodi = "15";
-    } elseif ($jurusan = 51) {
+    } elseif ($jurusan == 51) {
         $kode_fakultas = "FT";
         $id_prodi = "11";
-    } elseif ($jurusan = 52) {
+    } elseif ($jurusan == 52) {
         $kode_fakultas = "FT";
         $id_prodi = "12";
-    } elseif ($jurusan = 32) {
+    } elseif ($jurusan == 32) {
         $kode_fakultas = "FE";
         $id_prodi = 4;
-    } elseif ($jurusan = 42) {
+    } elseif ($jurusan == 42) {
         $kode_fakultas = "FISIP";
         $id_prodi = "9";
-    } elseif ($jurusan = 11) {
+    } elseif ($jurusan == 11) {
         $kode_fakultas = "FTI";
         $id_prodi = "13";
-    } elseif ($jurusan = 12) {
+    } elseif ($jurusan == 12) {
         $kode_fakultas = "FTI";
         $id_prodi = "14";
-    } elseif ($jurusan = 31) {
+    } elseif ($jurusan == 31) {
         $kode_fakultas = "FE";
         $id_prodi = "19";
-    } elseif ($jurusan = 71) {
+    } elseif ($jurusan == 71) {
         $kode_fakultas = "FIKOM";
         $id_prodi = "18";
-    } elseif ($jurusan = 43) {
+    } elseif ($jurusan == 43) {
         $kode_fakultas = "FISIP";
         $id_prodi = "10";
     }
@@ -142,7 +145,7 @@ if (isset($_POST['simpan'])) {
                         </div>
                     </div>
                     <div class="panel-footer text-right" style="background-color:#fffeff;">
-                        <button class="btn btn-default" type="clear" name="clear">Bersihkan</button>
+                        <button class="btn btn-default" type="reset" name="reset">Bersihkan</button>
                         <button class="btn btn-primary" type="submit" name="simpan" onclick="loadDoc">Simpan</button>
                     </div>
                 </div>

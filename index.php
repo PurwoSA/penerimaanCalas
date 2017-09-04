@@ -88,7 +88,7 @@ if (isset($_POST['simpan'])) {
 ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-5">
             <form class="form-horizontal" action="" method="post">
                 <div class="panel panel-info">
                     <div class="panel-heading">
@@ -166,7 +166,7 @@ if (isset($_POST['simpan'])) {
                 </div>
             </form>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-7">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">Pendaftar Terkini (<?php echo tanggal_indo('2016-03-20', true); ?>)</h3>
@@ -184,7 +184,7 @@ if (isset($_POST['simpan'])) {
                         <?php
                         //ambil data
                         $sekarang_gan = date('Y-m-d');
-                        $sql = "SELECT calas.nim, calas.nama_depan, calas.nama_belakang, program_studi.program_studi FROM calas, program_studi WHERE calas.id_prodi=program_studi.id_prodi ORDER BY waktu_pendaftaran DESC LIMIT 8";
+                        $sql = "SELECT calas.nim, calas.nama_depan, calas.nama_belakang, program_studi.program_studi FROM calas, program_studi WHERE calas.id_prodi=program_studi.id_prodi ORDER BY waktu_pendaftaran DESC";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
@@ -211,7 +211,11 @@ if (isset($_POST['simpan'])) {
     $.material.init();
     $(".select").dropdown({"autoinit": ".select"});
     $(document).ready( function () {
-        $('#table').DataTable();
+        $('#table').DataTable({
+            language: {
+                url: 'Indonesian.json'
+            }
+        });
     } );
 </script>
 </body>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - @localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="152502608">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="daftar_kir"/>
+    <schema id="4" parent="1" name="db_ci"/>
+    <schema id="5" parent="1" name="db_h"/>
+    <schema id="6" parent="1" name="db_penjualan"/>
+    <schema id="7" parent="1" name="db_persediaan"/>
+    <schema id="8" parent="1" name="db_sipb"/>
+    <schema id="9" parent="1" name="homestead"/>
+    <schema id="10" parent="1" name="ict_calas"/>
+    <schema id="11" parent="1" name="information_schema"/>
+    <schema id="12" parent="1" name="kepoinevent"/>
+    <schema id="13" parent="1" name="mysql"/>
+    <schema id="14" parent="1" name="pbd"/>
+    <schema id="15" parent="1" name="penilaian_calas"/>
+    <schema id="16" parent="1" name="performance_schema"/>
+    <schema id="17" parent="1" name="sekolah"/>
+    <schema id="18" parent="1" name="SeminaryRegist"/>
+    <table id="19" parent="2" name="tblcalonmhs"/>
+    <column id="20" parent="19" name="nodaftar">
+      <Position>1</Position>
+      <DataType>char(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="19" name="ncalmhs">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="22" parent="19" name="jenkel">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="23" parent="19" name="pendidikan">
+      <Position>4</Position>
+      <DataType>varchar(7)|0</DataType>
+    </column>
+    <key id="24" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>nodaftar</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

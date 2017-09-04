@@ -210,13 +210,13 @@ if (isset($_POST['simpan'])) {
 <script type="text/javascript">
     $.material.init();
     $(".select").dropdown({"autoinit": ".select"});
-    $(document).ready( function () {
+    $(document).ready(function () {
         $('#table').DataTable({
             language: {
                 url: 'Indonesian.json'
             }
         });
-    } );
+    });
 </script>
 </body>
 </html>

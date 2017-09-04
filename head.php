@@ -14,6 +14,8 @@
     <!-- Bootstrap Material Design -->
     <link rel="stylesheet" type="text/css" href="bootstrap-material-design/dist/css/bootstrap-material-design.css">
     <link rel="stylesheet" type="text/css" href="bootstrap-material-design/dist/css/ripples.min.css">
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="datatables.min.css"/>
 </head>
 <body>
 <!--Menu-->

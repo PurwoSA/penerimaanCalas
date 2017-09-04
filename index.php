@@ -172,7 +172,7 @@ if (isset($_POST['simpan'])) {
                     <h3 class="panel-title">Pendaftar Terkini (<?php echo tanggal_indo('2016-03-20', true); ?>)</h3>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="table">
                         <thead>
                         <tr>
                             <th>NIM</th>
@@ -206,9 +206,13 @@ if (isset($_POST['simpan'])) {
 <script src="bootstrap-material-design/dist/js/material.min.js"></script>
 <script src="bootstrap-material-design/dist/js/ripples.min.js"></script>
 <script src="./dropdown.js/jquery.dropdown.js"></script>
+<script type="text/javascript" src="datatables.min.js"></script>
 <script type="text/javascript">
     $.material.init();
     $(".select").dropdown({"autoinit": ".select"});
+    $(document).ready( function () {
+        $('#table').DataTable();
+    } );
 </script>
 </body>
 </html>
